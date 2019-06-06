@@ -121,7 +121,6 @@ Window {
                 PropertyChanges {
                     target: weatherView
                     opacity: 0.5
-                    interactive: false
                 }
                 PropertyChanges {
                     target: close
