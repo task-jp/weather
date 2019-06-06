@@ -7,7 +7,6 @@ Window {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
 
     Settings {
         id: settings
@@ -23,7 +22,6 @@ Window {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
-//        city: cityModel.get(cityView.currentIndex)
         text: weatherModel.title
         visible: opacity > 0
         onClicked: cityManager.state = 'select'
@@ -35,6 +33,8 @@ Window {
         anchors.top: cityLabel.bottom
         anchors.right: parent.right
         anchors.bottom: parent.bottom
+        anchors.leftMargin: window.width / 50
+        anchors.rightMargin: window.width / 50
 
         model: WeatherModel {
             id: weatherModel

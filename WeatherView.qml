@@ -1,5 +1,4 @@
 import QtQuick 2.12
-import QtQuick.Window 2.12
 
 Item {
     id: q
@@ -14,12 +13,12 @@ Item {
     }
 
     Column {
-        spacing: Screen.pixelDensity * 2
+        spacing: window.height / 25
         anchors.centerIn: parent
 
         Row {
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: Screen.pixelDensity * 5
+            spacing: window.width / 25
 
             Repeater {
                 id: repeater
@@ -32,7 +31,13 @@ Item {
             text: q.model.description
             width: q.width
             wrapMode: Label.WrapAnywhere
-            font.pixelSize: Screen.pixelDensity * 3
+            font.pixelSize: unitSize * 0.5
+            Rectangle {
+                anchors.fill: parent
+                color: 'black'
+                opacity: 0.25
+                z: -1
+            }
         }
     }
 }
