@@ -1,0 +1,9 @@
+Background Background.qml
+CityDelegate CityDelegate.qml
+CityLabel CityLabel.qml
+CityModel CityModel.qml
+CityView CityView.qml
+Copyright Copyright.qml
+Label Label.qml
+WeatherModel WeatherModel.qml
+WeatherView WeatherView.qml

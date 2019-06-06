@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CityView.qml</file>
+        <file>CityModel.qml</file>
+        <file>qmldir</file>
+        <file>Background.qml</file>
+        <file>CityLabel.qml</file>
+        <file>Label.qml</file>
+        <file>CityDelegate.qml</file>
+        <file>WeatherModel.qml</file>
+        <file>Copyright.qml</file>
+        <file>WeatherView.qml</file>
+    </qresource>
+</RCC>
