@@ -4,7 +4,8 @@ QT = quick
 SOURCES += \
         main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    fonts.qrc
 
 target.path = /opt/$${TARGET}/bin
 INSTALLS += target

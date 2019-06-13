@@ -6,5 +6,6 @@ Text {
     horizontalAlignment: Text.AlignLeft
     verticalAlignment: Text.AlignVCenter
     font.pixelSize: unitSize
+    font.family: 'Noto Sans JP'
     color: 'white'
 }
