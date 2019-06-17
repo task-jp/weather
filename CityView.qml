@@ -15,7 +15,7 @@ ListView {
     section.labelPositioning: ViewSection.CurrentLabelAtStart
     section.delegate: Item {
         width: ListView.view.width
-        height: Screen.pixelDensity * 5 * 2
+        height: window.height / 10
         Label {
             anchors.fill: parent
             text: section

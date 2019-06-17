@@ -9,13 +9,19 @@ ListModel {
     property string description
     property date publicTime
     property var copyright
+    onCityIDChanged: reload()
 
-    onCityIDChanged: {
-        q.clear()
-        if (q.cityID.length === 0) return
+    property Timer timer: Timer {
+        interval: 5 * 60 * 1000
+        repeat: true
+        running: q.cityID.length > 0
+        triggeredOnStart: true
+        onTriggered: reload()
+    }
+
+    function reload() {
         let xhr = new XMLHttpRequest
         xhr.onreadystatechange = function() {
-            q.clear()
             switch (xhr.readyState) {
             case XMLHttpRequest.DONE:
                 var json = JSON.parse(xhr.responseText)
@@ -23,6 +29,7 @@ ListModel {
                 q.description = json.description.text.replace(/\n+/g, '\n')
                 q.publicTime = new Date(json.publicTime)
                 q.copyright = json.copyright
+                q.clear()
                 var forecasts = json.forecasts
                 for (var i = 0; i < forecasts.length; i++) {
                     q.append(forecasts[i])

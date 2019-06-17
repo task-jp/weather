@@ -5,8 +5,8 @@ import Qt.labs.settings 1.0
 Window {
     id: window
     visible: true
-    width: 640
-    height: 480
+    width: 1920
+    height: 1080
 
     Settings {
         id: settings
@@ -50,9 +50,10 @@ Window {
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: model.image.url
-                width: model.image.width * 2
-                height: model.image.height * 2
+                width: model.image.width * 5
+                height: model.image.height * 5
                 smooth: true
+                antialiasing: true
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -101,6 +102,7 @@ Window {
     Copyright {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
+        anchors.margins: window.width / 50
         copyright: weatherModel.copyright
     }
 
@@ -116,7 +118,7 @@ Window {
                 PropertyChanges {
                     target: cityView
                     opacity: 1.0
-                    width: 200
+                    width: window.width / 5
                 }
                 PropertyChanges {
                     target: weatherView
