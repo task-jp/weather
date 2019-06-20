@@ -7,5 +7,5 @@ SOURCES += \
 RESOURCES += qml.qrc \
     fonts.qrc
 
-target.path = /opt/$${TARGET}/bin
+target.path = $$[QT_SYSROOT]/opt/$${TARGET}/bin
 INSTALLS += target
