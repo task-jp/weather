@@ -11,5 +11,7 @@
         <file>WeatherModel.qml</file>
         <file>Copyright.qml</file>
         <file>WeatherView.qml</file>
+        <file>NotoSansJP.qml</file>
+        <file>Frontend.qml</file>
     </qresource>
 </RCC>

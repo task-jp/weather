@@ -1,8 +1,8 @@
 #include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtGui/QGuiApplication>
-#include <QtGui/QFontDatabase>
 #include <QtQml/QQmlApplicationEngine>
+#include <QtQml/QQmlContext>
 #include <QtQuick/QQuickWindow>
 
 #ifdef Q_OS_LINUX
@@ -19,18 +19,20 @@ int main(int argc, char *argv[])
     app.setOrganizationName(QStringLiteral("TasukuSuzuki"));
     app.setOrganizationDomain(QStringLiteral("qt5.jp"));
 
+    QQmlApplicationEngine engine;
+    QQmlContext *context = engine.rootContext();
+
     QDir bin = app.applicationDirPath();
     if (bin.exists("../share/fonts/NotoSansJP-Regular.otf")) {
         // installed path
-        QFontDatabase::addApplicationFont(bin.absoluteFilePath("../share/fonts/NotoSansJP-Regular.otf"));
+        context->setContextProperty("fontPath", QUrl::fromLocalFile(bin.absoluteFilePath("../share/fonts/NotoSansJP-Regular.otf")));
     } else if (bin.exists("../weather/NotoSansJP-Regular.otf")) {
         // sourse path
-        QFontDatabase::addApplicationFont(bin.absoluteFilePath("../weather/NotoSansJP-Regular.otf"));
+        context->setContextProperty("fontPath", QUrl::fromLocalFile(bin.absoluteFilePath("../weather/NotoSansJP-Regular.otf")));
     } else {
         qWarning() << "bundled font not found and not installed";
     }
 
-    QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
