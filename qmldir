@@ -4,6 +4,8 @@ CityLabel CityLabel.qml
 CityModel CityModel.qml
 CityView CityView.qml
 Copyright Copyright.qml
+Frontend Frontend.qml
 Label Label.qml
+NotoSansJP NotoSansJP.qml
 WeatherModel WeatherModel.qml
 WeatherView WeatherView.qml
