@@ -5,7 +5,7 @@ ListView {
     id: q
     Rectangle {
         anchors.fill: parent
-        color: 'black'
+        color: '#000000'
         opacity: 0.25
         z: -1
     }
@@ -23,7 +23,7 @@ ListView {
         Rectangle {
             anchors.fill: parent
             z: -1
-            color: 'black'
+            color: '#000000'
             opacity: 0.75
         }
     }

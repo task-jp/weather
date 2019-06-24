@@ -36,7 +36,7 @@ Item {
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: model.dateLabel
-                color: 'white'
+                color: '#ffffff'
             }
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -49,7 +49,7 @@ Item {
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: '%1/%2'.arg(model.temperature.max ? model.temperature.max.celsius : '-').arg(model.temperature.min ? model.temperature.min.celsius : '-')
-                color: 'white'
+                color: '#ffffff'
             }
         }
     }

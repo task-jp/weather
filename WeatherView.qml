@@ -34,7 +34,7 @@ Item {
             font.pixelSize: unitSize * 0.5
             Rectangle {
                 anchors.fill: parent
-                color: 'black'
+                color: '#000000'
                 opacity: 0.25
                 z: -1
             }

@@ -14,7 +14,7 @@ MouseArea {
     Rectangle {
         z: -1
         anchors.fill: parent
-        color: 'black'
+        color: '#000000'
         opacity: 0.25
     }
 }
