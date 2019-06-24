@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_LINUX
                 rusage usage;
                 if (getrusage(RUSAGE_SELF, &usage) == 0) {
-                    qInfo() << usage.ru_stime.tv_sec << usage.ru_stime.tv_usec << usage.ru_utime.tv_sec << usage.ru_utime.tv_usec << usage.ru_maxrss;
+                    qInfo() << usage.ru_utime.tv_sec * 1000 + usage.ru_utime.tv_usec / 1000;
                 }
 #endif
                 QMetaObject::invokeMethod(&app, "quit", Qt::QueuedConnection);
